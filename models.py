@@ -1,13 +1,15 @@
-from sqlalchemy import Column,interger,String,database
+from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import declarative_base
-from date import date
-Base=declarative_base
-class products(Base):
-    __tablename__=="products"
 
-id=Column(Interger,primary key=True,auto_inrement=True,nullable=false)
-name=Column(String(100),nullable=False)
-date_applied=Column(date,default=date.today)
-def__init__(self,name,date):
-    self.name=name
-    self.date=date
+Base = declarative_base()
+
+class Product(Base):
+    __tablename__ = "products"
+
+    id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
+    name = Column(String(100), nullable=False)
+    price = Column(String(100))
+
+    def __init__(self, name, price):
+        self.name = name
+        self.price = price

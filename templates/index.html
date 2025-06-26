@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Product Form{% endblock %}
+
+{% block content %}
+<h1>Add Product and Price</h1>
+
+<form method="POST" action="/">
+    <label for="name">
+        Name:
+        <input type="text" name="name" id="name" placeholder="Product name" required>
+    </label><br><br>
+
+    <label for="price">
+        Price:
+        <input type="text" name="price" id="price" placeholder="Product price" required>
+    </label><br><br>
+
+    <input type="submit" value="Submit">
+</form>
+{% endblock %}
